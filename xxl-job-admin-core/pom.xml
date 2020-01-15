@@ -75,6 +75,12 @@
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>
             <version>${xxl-job.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--数据库相关-->
         <dependency>
@@ -115,7 +121,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.10.0</version>
+            <version>2.10.1</version>
         </dependency>
         <!-- 日志相关 -->
         <dependency>
@@ -168,12 +174,6 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.2</version>
             <scope>runtime</scope>
-        </dependency>
-        <!-- 端点信息监控 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-actuator</artifactId>
-            <version>2.2.2.RELEASE</version>
         </dependency>
 
     </dependencies>
