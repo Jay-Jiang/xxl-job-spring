@@ -82,7 +82,6 @@
 
     <!-- 添加必须的组件 -->
     <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"/>
-    <bean id="i18nUtil" class="com.xxl.job.admin.core.util.I18nUtil"/>
 
 
 </beans>

@@ -1,7 +1,6 @@
 package com.xxl.job.admin.controller;
 
 import com.xxl.job.admin.controller.annotation.PermissionLimit;
-import com.xxl.job.admin.core.util.I18nUtil;
 import com.xxl.job.admin.service.LoginService;
 import com.xxl.job.admin.service.XxlJobService;
 import com.xxl.job.core.biz.model.ReturnT;
@@ -34,9 +33,6 @@ public class IndexController {
     private XxlJobService xxlJobService;
     @Resource
     private LoginService loginService;
-    @Resource
-    private I18nUtil i18nUtil;
-
 
     @RequestMapping("/")
     public String index(Model model) {
