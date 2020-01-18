@@ -178,4 +178,56 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <!-- maven 打包编译插件（jdk1.8 UTF-8） -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- 自动将源码打包并发布 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--指定远程仓库的地址-->
+    <distributionManagement>
+        <!--稳定版本的仓库-->
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexuss Releses Repository</name>
+            <url>
+                http://192.168.80.55:7000/nexus/content/repositories/releases/
+            </url>
+        </repository>
+        <!--快照版本的仓库-->
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexuss Snapshots Repository</name>
+            <url>
+                http://192.168.80.55:7000/nexus/content/repositories/snapshots/
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
